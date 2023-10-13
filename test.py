@@ -10,7 +10,7 @@ w = Wall()
 k =Wall()
 m = Wall()
 d =Wall()
-print(d.__class__ is Wall)
+print(d.__class__ == Wall)
 liste = [w,k,m,d]
 print(type(Wall) in liste)
 

@@ -11,7 +11,7 @@ print(f"seed: {seed_value:_d} ns")
 def count_object ( objects , object):
     return len ( [v for k,v in objects.items() if v is objects])
 
-def is_in_list (list , object ):
+def is_in_list ( list , object ):
     for e in list :
         if e.__class__.__name__ == object:
             return True
@@ -24,10 +24,10 @@ def find_in_list ( list , object : str ):
 
 
 
-def is_overpopulated ( list , object: str)->bool:
+def is_overpopulated ( list , object: str )->bool:
     """La taille de la liste est connue et dois etre de 9
     /!\ object est un str !!"""
-    return [i for i , e in enumerate(list) if e.__class__.__name__ ==  object or e.__class__.__name__ == "Wall" ] == [0,1,2,3,4,5,6,7,8]
+    return [i for i , e in enumerate(list) if e.__class__.__name__ ==  object or e.__class__.__name__ == "Wall" or e.__class__.__name__ == "Fox" ] == [0,1,2,3,4,5,6,7,8]
 
 
 class Wall :
@@ -151,11 +151,11 @@ class Grassland :
 if __name__ == "__main__" :
     from fox import Fox
     from  rabbit import Rabbit
-    gd = GridDisplay((100,50), nb_pixels_by_box = 10 ,bg_color=(0,250,0) ,period_duration = 10)
+    gd = GridDisplay((200,50), nb_pixels_by_box = 8 , bg_color=(0,220,0) , period_duration = 200)
     grass = Grassland(gd)
-    # grass.populate_with_foxes(1)
-    grass.populate_with_rabbits(1)
-    #grass.place_new_object(  (5,5) , Rabbit( (5,5) )  )
+    grass.populate_with_foxes(130)
+    grass.populate_with_rabbits(3500)
+    # #grass.place_new_object(  (5,5) , Rabbit( (5,5) )  )
 
     nb_obj = grass.get_nb_objects()
     grass.draw_objects()
@@ -163,26 +163,29 @@ if __name__ == "__main__" :
     while gd.next_period(text=", " + text ) and gd.period < 50000 :
         grass.act_objects()
         nb_objects = grass.get_nb_objects()
-        #si plus de fox on en remet un
+        
+        # Si plus de fox on en remet un
         # if 'Fox' not in nb_objects.keys():
         #     grass.populate_with_foxes(1)
         #     nb_objects['Fox'] = 1
-        if 'Rabbit' not in nb_objects.keys():
-            grass.populate_with_rabbits(1)
-            nb_objects['Rabbit'] = 1
+        # if 'Rabbit' not in nb_objects.keys():
+        #     grass.populate_with_rabbits(1)
+        #     nb_objects['Rabbit'] = 1
         grass.draw_objects()
         text = ", ".join(f"{name}: {value}" for name, value in nb_objects.items())
 
 
-    # for i in range(9,12):
+    
+        
+# for i in range(9,12):
     #         for j in range(9,12):
     #             grass.place_new_object((i,j),Fox((i,j)))
     #             grass.draw_objects()
     # grass.objects[(10,10)].act(grass)
     # while gd.next_period(text=", ") and gd.period < 5000 :
     #     grass.draw_objects()
-        
 
+    # print(grass.get_box((10,10)))
 
 
 

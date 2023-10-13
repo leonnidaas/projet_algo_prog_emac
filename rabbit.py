@@ -35,16 +35,17 @@ class Rabbit :
             assert grassland.get_box(self.coord).__class__ == Rabbit, grassland.get_box(self.coord).__class__.__name__
             neighbours = grassland.get_neighbours(self.coord)
             
-            # if is_overpopulated(neighbours, "Rabbit") :
-            #     grassland.remove_object(self.coord)
-            #     self.living = False
+            if is_overpopulated(neighbours, "Rabbit") :
+                grassland.remove_object(self.coord)
+                self.living = False
             
-            for elt in neighbours :                                     # on regarde pour tous les voisins de Rabbit, s'ils sont occupés par Rabbit
-                                                                        # ou par Wall (si oui, alors il meurt au prochain tour)
-                if elt != "Rabbit" and elt != "Wall" and elt!="Fox":
-                    return
-            grassland.remove_object(self.coord)
-            self.living = False
+            # for elt in neighbours :                                     # on regarde pour tous les voisins de Rabbit, s'ils sont occupés par Rabbit
+            #                                                             # ou par Wall (si oui, alors il meurt au prochain tour)
+            #     if elt.__class__ == Grass :  
+            #         return
+            # grassland.remove_object(self.coord)
+            # self.living = False
+
             
         
 

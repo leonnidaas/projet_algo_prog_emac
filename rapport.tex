@@ -1,26 +1,114 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+
+%\documentclass[french]{article} % Nous pourrons tester avec l’option titlepage
+%\usepackage{babel}
+
+\date{\today}
+\author{\bsc{DUPUY-\--CORTI Clara} \and \bsc{PELTZER Léon}}
+\title{Rapport du projet algorithmique et programmation}
+
 \begin{document}
 
-bonjour !
-problemes :
+{\large
+\maketitle      
 
-1- D'abord créer la grille avant les mouvements et les conditions de mort pas saturation des animaux pour 
-2- Faut-il stocker à chaque étape les voisins d'un objet (animal) dans un dico ou liste pour la chasse et la mort par sur-population ?
-3- Problème d'affichage on avait une boucle while true qui faisait planter le programme
-4- Le lapin bouffe le renard
-5- Le lapin ne bouge pas
-6- pb quand un renard veut se mélanger dans les lapins pour les bouffer, ça crash (c'est pas ça le problème --> pb avec les lapins)
+Mettre un petit texte d'introduction avant le sommaire ... par exemple :
+\\
+Dans ce document, vous trouverez toute la documentation concernant le projet :
+\begin{itemize}
+\item les explications des différentes classes, méthodes, et fonctions définies
+\item les problèmes rencontrés au cours de l'écriture du code
+\item ...
+\end{itemize}
 
 
-Avancée :
-- on a une bonne base pour travailler 
+\tableofcontents
+
+\newpage
+
+   \section*{Introduction}
+   \addcontentsline{toc}{section}{Introduction}
+      texte de l’introduction
+
+   \section{Problèmes rencontrés}
+      Cette première partie permettra d'expliquer les différents problèmes auxquels nous avons fait face et la partie suivante décrira les moyens utilisés pour résoudre les problèmes.
+      \subsection{blabla}
+    \begin{enumerate}
+   
+\item D'abord créer la grille avant les mouvements et les conditions de mort pas saturation des animaux pour 
+
+\item Faut-il stocker à chaque étape les voisins d'un objet (animal) dans un dico ou liste pour la chasse et la mort par sur-population ?
+
+\item Problème d'affichage on avait une boucle while true qui faisait planter le programme
+\item Le lapin bouffe le renard
+
+\item Le lapin ne bouge pas
+
+\item pb quand un renard veut se mélanger dans les lapins pour les bouffer, ça crash (c'est pas ça le problème --> pb avec les lapins )
+
+    \end{enumerate}
+
+%      \subsection{blabla 2}
+%         texte de la sous-section 2
+%      \subsection{Sous-section 3}
+%         texte de la sous-section 3
+
+
+\newpage
+
+   \section[Avancés]{Les résolutions des problèmes de la partie 1}
+   
+- on a une bonne base pour travailler \\ 
 class fox de base et rabbit de base 
 classe garssaland de base avec les minimum pour le projet 
 
 
-objectif :
-- pauffiner commenter améliorer 
+\newpage
+
+   \section{Objectifs}
+      texte d’introduction de la deuxième section
+      \subsection{Sous-section 1}
+
+         \begin{itemize}
+         	\item Peaufiner
+         	\item Commenter
+         	\item Améliorer 
+
+         \end{itemize}
+         
+%      \subsection{Sous-section 2}
+%         texte de la sous-section 2
 
 
+\newpage
+   
+   \section*{Conclusion}
+   \addcontentsline{toc}{section}{Conclusion}
+      texte de la conclusion 
+   
+   
+\newpage
+
+   \appendix  % On passe aux annexes
+   \section{Annexe 1}
+       texte de l’annexe 1 
+
+
+\newpage
+  
+   \section{Annexe 2}
+      texte de l’annexe 2
+
+
+
+
+}
 \end{document} 
+
 
 
